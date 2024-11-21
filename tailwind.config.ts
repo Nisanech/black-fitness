@@ -16,7 +16,10 @@ const config: Config = {
       },
       fontFamily: {
         'deutschlander': ['DeutschlanderFont', ...fontFamily.sans],
-
+        'anta': ['AntaFont', ...fontFamily.sans],
+        'courgette': ['CourgetteFont', ...fontFamily.sans],
+        'inter': ['InterFont', ...fontFamily.sans],
+        'kanit': ['KanitFont', ...fontFamily.sans],
       },
     },
   },

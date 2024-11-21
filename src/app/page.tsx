@@ -1,8 +1,12 @@
+"use client"
 
+import HeroSlider from "@/presentation/home/HeroSlider";
 
 export default function Home() {
   return (
-    <h1 className="text-5xl font-deutschlander text-green-support">Black Fitness</h1>
+    <>
+      <HeroSlider />
+    </>
     
   );
 }

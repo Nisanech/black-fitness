@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 
 import "@/shared/styles/globals.css";
 import "@/shared/styles/normalize.css";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/presentation/components/Header";
+import Footer from "@/presentation/components/Footer";
 
 export const metadata: Metadata = {
   title: "BlackFitness",
@@ -24,7 +24,7 @@ export default function RootLayout({
 
         <main>{children}</main>
 
-        <Footer />
+        {/* <Footer /> */}
       </body>
     </html>
   );
