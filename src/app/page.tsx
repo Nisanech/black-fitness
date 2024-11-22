@@ -52,7 +52,7 @@ export default function Home() {
 
         <div className="relative z-20 flex flex-col md:flex-row items-center justify-center p-4 max-w-5xl w-full mx-auto space-y-4 md:space-y-0 md:space-x-8">
           <div className="text-center md:text-left text-[#f3f3f3] md:w-2/3">
-            <p className="text-sm font-deutschlander text-[24px]  tracking-wider leading-[25px]">
+            <p className="text-[24px] tracking-wider leading-[25px] font-deutschlander">
               Bienvenido a BLACK FITNESS! Juntos cumpliremos todas tus metas y
               objetivos, ya sea bajar de peso, aumentar de masa muscular,
               acondicionamiento, mejorar tu salud o simplemente pasarla bien.

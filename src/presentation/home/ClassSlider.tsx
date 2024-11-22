@@ -167,7 +167,7 @@ export default function ClassSlider() {
                       alt={item.title}
                       layout="fill"
                       objectFit="cover"
-                      className="absolute top-0 left-0 w-full h-full grayscale hover:grayscale-0 transition-all duration-300"
+                      className="absolute top-0 left-0 w-full h-full lg:grayscale hover:grayscale-0 transition-all duration-300"
                     />
                   </div>
                   <div className="absolute bottom-[60px] left-0 xl:left-[20%] right-0 mx-[25px] bg-[#3E3E3E] p-4 rounded-[20px] transform xl:w-[320px] translate-y-1/3">
