@@ -62,7 +62,7 @@ export default function Header() {
 
   return (
     <>
-      <header className={`w-full bg-black-principal`}>
+      <header className={`w-full bg-black-principal z-50`}>
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-center py-4">
             <Link href="/">
@@ -98,7 +98,7 @@ export default function Header() {
 
             <nav className="hidden lg:flex items-center justify-between space-x-6">
               {menuItems.map((item) => (
-                <div key={item.name} className="relative group">
+                <div key={item.name} className="relative group z-50">
                   <button
                     onClick={() => toggleDropdown(item.name)}
                     className="flex items-center m-0 p-0 gap-2 font-jaldi font-bold text-[16px] text-white focus:outline-none"
