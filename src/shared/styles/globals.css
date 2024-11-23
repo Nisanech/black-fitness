@@ -89,3 +89,4 @@ h1, h2, h3, h4, h5, h6, p, ul, ol, li {
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
   background: var(--gray_support);
 }
+
