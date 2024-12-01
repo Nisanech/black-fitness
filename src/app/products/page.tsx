@@ -1,21 +1,5 @@
 import Image from "next/image";
 
-const products = [
-  "/assets/productos/producto-1.png", "/assets/productos/producto-2.png", "/assets/productos/producto-3.png",
-  "/assets/productos/producto-4.png", "/assets/productos/producto-5.png", "/assets/productos/producto-6.png",
-  "/assets/productos/producto-7.png", "/assets/productos/producto-8.png", "/assets/productos/producto-9.png",
-  "/assets/productos/producto-10.png", "/assets/productos/producto-11.png", "/assets/productos/producto-12.png",
-  "/assets/productos/producto-13.png", "/assets/productos/producto-14.png", "/assets/productos/producto-15.png",
-  "/assets/productos/producto-16.png", "/assets/productos/producto-17.png", "/assets/productos/producto-18.png",
-  "/assets/productos/producto-19.png", "/assets/productos/producto-20.png", "/assets/productos/producto-21.png",
-  "/assets/productos/producto-22.png", "/assets/productos/producto-23.png", "/assets/productos/producto-24.png",
-  "/assets/productos/producto-25.png", "/assets/productos/producto-26.png", "/assets/productos/producto-27.png",
-  "/assets/productos/producto-28.png", "/assets/productos/producto-29.png", "/assets/productos/producto-30.png",
-  "/assets/productos/producto-31.png", "/assets/productos/producto-32.png", "/assets/productos/producto-33.png",
-  "/assets/productos/producto-34.png", "/assets/productos/producto-35.png", "/assets/productos/producto-36.png",
-  "/assets/productos/producto-37.png",
-]
-
 export default function ProductsPage() {
   return (
     <>
