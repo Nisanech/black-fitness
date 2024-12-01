@@ -105,35 +105,74 @@ export default function ProductsPage() {
         </div>
       </div>
       
-      <div className="relative w-full min-h-[30rem] flex items-center justify-center overflow-hidden py-7">
-        <Image
-          src="/assets/productos/background.svg"
-          alt="Background"
-          layout="fill"
-          objectFit="cover"
-          className="absolute inset-0 z-0"
-        />
+      <div className="bg-[url('/assets/productos/background.svg')] bg-cover bg-center w-full pt-4 pb-8">
         
-        <div className="mx-auto w-full relative z-20">
           <h1
-            className="text-center m-0 text-[30px] md:text-[40px] xl:text-[45px] tracking-wider leading-[25px] font-deutschlander text-[#f3f3f3]">
+            className="text-center text-[30px] md:text-[40px] xl:text-[45px]  leading-[25px] font-deutschlander text-[#f3f3f3]">
             Nuestros Productos
           </h1>
           
-          <div className="flex flex-col justify-center md:flex-row md:flex-wrap gap-7 px-7 mt-8">
-            {products.map(product => (
-              <div key={product} className="relative aspect-[2/3] w-full h-auto md:w-[280px] md:h-[370px]">
-                <Image
-                  src={product}
-                  alt="producto"
-                  className="h-full object-cover rounded-lg"
-                  fill
-                />
-              </div>
-            ))}
+          <div>
+            
+            <div className="flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4 pl-[10px] pr-[10px] sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] bg-[url('/assets/productos/producto-1.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:col-start-1 sm:row-start-2  md:col-start-1 md:row-start-2 bg-[url('/assets/productos/producto-4.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:row-span-2 sm:col-start-2 row-start-1 md:row-span-2 md:col-start-2 md:row-start-1 bg-[url('/assets/productos/producto-2.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] sm:row-start-3 md:col-span-2 md:col-start-3 md:row-start-1 bg-[url('/assets/productos/producto-3.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:row-start-3 md:col-start-3 md:row-start-2 bg-[url('/assets/productos/producto-5.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:col-span-2 sm:row-start-4 md:col-start-4 md:row-start-2 bg-[url('/assets/productos/producto-6.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+            </div>
+
+            <div className="flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4 pl-[10px] pr-[10px] pt-4 sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] bg-[url('/assets/productos/producto-7.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:col-start-1 sm:row-start-2  md:col-start-1 md:row-start-2 bg-[url('/assets/productos/producto-10.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:row-span-2 sm:col-start-2 row-start-1 md:row-span-2 md:col-start-2 md:row-start-1 bg-[url('/assets/productos/producto-8.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] sm:row-start-3 md:col-span-2 md:col-start-3 md:row-start-1 bg-[url('/assets/productos/producto-9.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:row-start-3 md:col-start-3 md:row-start-2 bg-[url('/assets/productos/producto-11.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:col-span-2 sm:row-start-4 md:col-start-4 md:row-start-2 bg-[url('/assets/productos/producto-12.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+            </div>
+
+            <div className="flex flex-col sm:grid sm:grid-cols-3 sm:grid-rows-1 gap-4 pl-[10px] pr-[10px] pt-4 sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] bg-[url('/assets/productos/producto-13.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] bg-[url('/assets/productos/producto-14.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] bg-[url('/assets/productos/producto-15.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+            </div>
+
+            <div className="flex flex-col sm:grid sm:grid-cols-2 sm:grid-rows-4 md:grid-cols-4 md:grid-rows-2 gap-4 pl-[10px] pr-[10px] pt-4 sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] sm:row-span-2 md:row-span-2 bg-[url('/assets/productos/producto-16.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] bg-[url('/assets/productos/producto-17.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:col-start-2 md:col-start-2 md:row-start-2 bg-[url('/assets/productos/producto-20.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] sm:row-span-2 sm:row-start-3 md:col-start-3 md:row-start-1 bg-[url('/assets/productos/producto-18.png')] bg-cover bg-center sm:h-[100%]  rounded-lg"></div>
+                <div className="h-[250px] sm:row-start-3 md:col-start-4 md:row-start-1 bg-[url('/assets/productos/producto-19.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] sm:col-start-2 md:col-span-2 mn:col-start-3 md:row-start-2 bg-[url('/assets/productos/producto-21.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+            </div>
+
+            <div className="flex flex-col sm:grid sm:grid-cols-3 sm:grid-rows-1 gap-4 pl-[10px] pr-[10px] pt-4 sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] bg-[url('/assets/productos/producto-22.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] bg-[url('/assets/productos/producto-23.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] bg-[url('/assets/productos/producto-24.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+            </div>
+
+            <div className="flex flex-col sm:grid md:grid-cols-4 md:grid-rows-3 gap-4 pl-[10px] pr-[10px] pt-4 sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] bg-[url('/assets/productos/producto-25.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] row-span-2 col-start-1 row-start-2 md:row-span-2 md:col-start-1 md:row-start-2 bg-[url('/assets/productos/producto-29.png')] bg-cover bg-center sm:300px md:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] row-span-2 col-start-2 row-start-1 md:col-span-2 md:row-span-2 md:col-start-2 md:row-start-1  bg-[url('/assets/productos/producto-26.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] col-start-2 row-start-3 md:col-start-4 md:row-start-1 bg-[url('/assets/productos/producto-27.png')] bg-cover bg-center sm:h-[100%]  rounded-lg"></div>
+                <div className="h-[250px] row-start-4 md:col-start-4 md:row-start-2 bg-[url('/assets/productos/producto-28.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] row-start-4 md:col-start-2 md:row-start-3 bg-[url('/assets/productos/producto-30.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] row-start-5 md:col-start-3 md:row-start-3 bg-[url('/assets/productos/producto-31.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] row-start-5 md:col-start-4 md:row-start-3 bg-[url('/assets/productos/producto-32.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+            </div>
+
+            <div className="flex flex-col sm:grid grid-cols-2 grid-rows-3 md:grid-cols-3 md:grid-rows-2 gap-4 pl-[10px] pr-[10px] pt-4 sm:pl-[70px] sm:pr-[70px]">
+                <div className="h-[250px] bg-[url('/assets/productos/producto-33.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] md:col-start-1 md:row-start-2 bg-[url('/assets/productos/producto-36.png')] bg-cover bg-center sm:h-[300px] rounded-lg"></div>
+                <div className="h-[250px] row-start-2 md:col-start-2 md:row-start-2 bg-[url('/assets/productos/producto-37.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+                <div className="h-[250px] row-start-2 md:col-start-2 md:row-start-1 bg-[url('/assets/productos/producto-34.png')] bg-cover bg-center sm:h-[100%]  rounded-lg"></div>
+                <div className="h-[250px] col-span-2 row-start-3 md:row-span-2 md:col-start-3 md:row-start-1 bg-[url('/assets/productos/producto-35.png')] bg-cover bg-center sm:h-[100%] rounded-lg"></div>
+            </div>
           
           </div>
-        </div>
       </div>
     </>
   )
