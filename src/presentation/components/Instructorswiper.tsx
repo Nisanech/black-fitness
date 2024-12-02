@@ -58,87 +58,87 @@ const ResponsiveCarousel: React.FC<CarouselProps> = ({ teamMembers }) => {
 
   return (
     <>
-      <div className="relative w-full px-4 py-12 overflow-hidden">
-        <div className="overflow-hidden">
-          <div className="flex transition-transform duration-300 ease-in-out">
-            {visibleMembers().map((member, index) => (
-              <div
-                key={`${member.id}-${index}`}
-                className={`w-full flex-shrink-0 px-2 ${
-                  itemsToShow === 1
-                    ? "w-full"
-                    : itemsToShow === 2
-                    ? "w-1/2"
-                    : "w-1/3"
-                }`}
-              >
-                <div className="relative group">
-                  <div className="relative w-full pt-[100%] rounded-full overflow-hidden">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#3E3E3E]/90 to-[#D9D9D9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                        <p className="text-[24px] tracking-wider leading-[35px] font-deutschlander writing-mode-vertical">
-                          {member.name}
-                        </p>
-                        <p className="text-[24px] tracking-wider leading-[35px] font-deutschlander mt-2 writing-mode-vertical">
-                          {member.position}
-                        </p>
-                      </div>
+      <div className="relative w-full max-w-screen-2xl mx-auto px-4 py-12 overflow-hidden">
+      <div className="overflow-hidden">
+        <div className="flex transition-transform duration-300 ease-in-out">
+          {visibleMembers().map((member, index) => (
+            <div
+              key={`${member.id}-${index}`}
+              className={`flex-shrink-0 px-2 flex justify-center ${
+                itemsToShow === 1
+                  ? "w-full"
+                  : itemsToShow === 2
+                  ? "w-1/2"
+                  : "w-1/3"
+              }`}
+            >
+              <div className="relative group">
+                <div className="relative w-[290px] h-[290px] rounded-full overflow-hidden mx-auto">
+                  <Image
+                    src={member.image}
+                    alt={member.name}
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#3E3E3E]/90 to-[#D9D9D9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <h3 className="text-lg font-semibold writing-mode-vertical">
+                        {member.name}
+                      </h3>
+                      <p className="text-sm opacity-90 mt-2 writing-mode-vertical">
+                        {member.position}
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-
-        <button
-          onClick={prevSlide}
-          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
-          aria-label="Previous slide"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M15 19l-7-7 7-7"
-            />
-          </svg>
-        </button>
-
-        <button
-          onClick={nextSlide}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
-          aria-label="Next slide"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            className="w-6 h-6"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M9 5l7 7-7 7"
-            />
-          </svg>
-        </button>
       </div>
+
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+        aria-label="Previous slide"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+        aria-label="Next slide"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          className="w-6 h-6"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+    </div>
     </>
   );
 };
