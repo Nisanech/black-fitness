@@ -1,95 +1,145 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 interface ImageData {
-  src: string;
+  image: string;
   name: string;
-  carge: string;
+  position: string;
+  id: number;
 }
 
 interface CarouselProps {
-  images: ImageData[];
+  teamMembers: ImageData[];
 }
 
-const ResponsiveCarousel: React.FC<CarouselProps> = ({ images }) => {
+const ResponsiveCarousel: React.FC<CarouselProps> = ({ teamMembers }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [itemsToShow, setItemsToShow] = useState(3);
 
-  // Determina cuántas imágenes mostrar según el tamaño de la pantalla
-  const getVisibleImages = () => {
-    if (typeof window === "undefined") return 4; // Renderizado del servidor
-    if (window.innerWidth >= 1024) return 4; // Escritorio
-    if (window.innerWidth >= 768) return 3; // Tablet
-    if (window.innerWidth >= 640) return 2; // Pantallas pequeñas
-    return 1; // Móviles
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 640) {
+        setItemsToShow(1);
+      } else if (window.innerWidth < 1024) {
+        setItemsToShow(2);
+      } else {
+        setItemsToShow(3);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const nextSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const nextIndex = prevIndex + 1;
+      return nextIndex >= teamMembers.length ? 0 : nextIndex;
+    });
   };
 
-  const visibleCount = getVisibleImages();
-
-  const handlePrev = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex - visibleCount < 0 ? images.length - visibleCount : prevIndex - visibleCount
-    );
+  const prevSlide = () => {
+    setCurrentIndex((prevIndex) => {
+      const previousIndex = prevIndex - 1;
+      return previousIndex < 0 ? teamMembers.length - 1 : previousIndex;
+    });
   };
 
-  const handleNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex + visibleCount >= images.length ? 0 : prevIndex + visibleCount
-    );
+  const visibleMembers = () => {
+    const wrappedMembers = [
+      ...teamMembers,
+      ...teamMembers.slice(0, itemsToShow - 1),
+    ];
+    return wrappedMembers.slice(currentIndex, currentIndex + itemsToShow);
   };
 
   return (
-    <div className="flex justify-center items-center w-full">
-      {/* Botón anterior */}
-      <button
-        className="absolute left-0 bg-gray-800 text-white rounded-full w-10 h-10 flex justify-center items-center z-10"
-        onClick={handlePrev}
-      >
-        &lt;
-      </button>
-
-      {/* Carrusel de imágenes */}
-      <div className="w-full overflow-hidden">
-        <div
-          className="flex transition-transform duration-300"
-          style={{
-            transform: `translateX(-${(currentIndex / images.length) * 165}%)`,
-          }}
-        >
-          {images.map((image, index) => (
-            <div
-              key={index}
-              className={`flex-none w-1/${visibleCount} p-4`}
-              style={{ flex: `0 0 ${10 / visibleCount}%` }}
-            >
-              <div className="w-[200px] p-4 rounded-lg text-center">
-                <Image
-                  src={image.src}
-                  alt={image.name}
-                  width={300}
-                  height={150}
-                  className="rounded-full mx-auto"
-                />
-
-                <div>
-                <p className="mt-2 font-deutschlander text-white">{image.name}</p>
-                <p className="mt-2 font-deutschlander text-white">{image.carge}</p>
+    <>
+      <div className="relative w-full px-4 py-12 overflow-hidden">
+        <div className="overflow-hidden">
+          <div className="flex transition-transform duration-300 ease-in-out">
+            {visibleMembers().map((member, index) => (
+              <div
+                key={`${member.id}-${index}`}
+                className={`w-full flex-shrink-0 px-2 ${
+                  itemsToShow === 1
+                    ? "w-full"
+                    : itemsToShow === 2
+                    ? "w-1/2"
+                    : "w-1/3"
+                }`}
+              >
+                <div className="relative group">
+                  <div className="relative w-full pt-[100%] rounded-full overflow-hidden">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#3E3E3E]/90 to-[#D9D9D9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                        <p className="text-[24px] tracking-wider leading-[35px] font-deutschlander writing-mode-vertical">
+                          {member.name}
+                        </p>
+                        <p className="text-[24px] tracking-wider leading-[35px] font-deutschlander mt-2 writing-mode-vertical">
+                          {member.position}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
 
-      {/* Botón siguiente */}
-      <button
-        className="absolute right-0 bg-gray-800 text-white rounded-full w-10 h-10 flex justify-center items-center z-10"
-        onClick={handleNext}
-      >
-        &gt;
-      </button>
-    </div>
+        <button
+          onClick={prevSlide}
+          className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+          aria-label="Previous slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M15 19l-7-7 7-7"
+            />
+          </svg>
+        </button>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-2 shadow-md"
+          aria-label="Next slide"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </button>
+      </div>
+    </>
   );
 };
 
