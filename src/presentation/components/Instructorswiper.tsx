@@ -81,11 +81,11 @@ const ResponsiveCarousel: React.FC<CarouselProps> = ({ teamMembers }) => {
                     className="object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#3E3E3E]/90 to-[#D9D9D9]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                      <h3 className="text-lg font-semibold writing-mode-vertical">
+                    <div className="absolute bottom-[30px] left-0 right-0 p-6 text-white text-center transform translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                      <p className="text-[24px] tracking-wider leading-[20px] font-deutschlander writing-mode-vertical">
                         {member.name}
-                      </h3>
-                      <p className="text-sm opacity-90 mt-2 writing-mode-vertical">
+                      </p>
+                      <p className="text-[24px] tracking-wider leading-[20px] font-deutschlander mt-2 writing-mode-vertical">
                         {member.position}
                       </p>
                     </div>
