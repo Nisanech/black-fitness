@@ -178,7 +178,7 @@ export default function AboutUsPage() {
         <div className="flex flex-col md:flex-row justify-center items-center md:items-start gap-8">
           <div className="w-full md:w-1/2 max-w-md">
             <Image
-              src="/assets/Nosotros/nosotros_describe.jpg"
+              src="/assets/Nosotros/nosotros_describe.png"
               alt="Plan 1"
               width={400}
               height={300}
@@ -188,7 +188,7 @@ export default function AboutUsPage() {
           </div>
           <div className="w-full md:w-1/2 max-w-md">
             <Image
-              src="/assets/Nosotros/nosotros_describe_2.jpg"
+              src="/assets/Nosotros/nosotros_describe_2.png"
               alt="Plan 2"
               width={400}
               height={300}

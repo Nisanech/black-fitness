@@ -2,6 +2,7 @@
 import Image from "next/image";
 import HeroSlider from "@/presentation/home/HeroSlider";
 import ClassSlider from "@/presentation/home/ClassSlider";
+import { useRouter } from "next/navigation";
 
 interface Planes {
   image: string;
@@ -36,6 +37,12 @@ const includesPlanes: Planes[] = [
 ];
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleRedirect = () => {
+    router.push("/about-us");
+  };
+  
   return (
     <>
       <HeroSlider />
@@ -217,9 +224,10 @@ export default function Home() {
               <div className="flex justify-start mt-auto">
                 <button
                   type="button"
-                  className="py-3 px-6 text-[24px] font-normal font-deutschlander text-[#f3f3f3] bg-black-principal rounded-full border border-[#f3f3f3] focus:ring-4 focus:ring-[#F3F3F3] w-full md:w-[250px] lg:w-[300px]"
+                  className="py-3 px-6 text-[24px] font-normal font-deutschlander text-[#f3f3f3] rounded-full border border-[#f3f3f3] focus:ring-4 focus:ring-[#F3F3F3] w-full md:w-[250px] lg:w-[300px] bg-transparent"
+                  onClick={handleRedirect}
                 >
-                  Todas nuestras clases
+                  Conoce mas sobre Black Fitness
                 </button>
               </div>
             </div>

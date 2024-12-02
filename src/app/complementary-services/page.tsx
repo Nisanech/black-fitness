@@ -21,6 +21,27 @@ const images = [
   }
 ];
 
+const imagesSlider = [
+  {
+    image: "/assets/servicios/instalacion-1.png"
+  },
+  {
+    image: "/assets/servicios/instalacion-2.png"
+  },
+  {
+    image: "/assets/servicios/instalacion-3.png"
+  },
+  {
+    image: "/assets/servicios/instalacion-4.png"
+  },
+  {
+    image: "/assets/servicios/instalacion-5.png"
+  },
+  {
+    image: "/assets/servicios/instalacion-6.png"
+  },
+];
+
 export default function ComplementaryServicesPage() {
   return (
     <>
@@ -46,9 +67,10 @@ export default function ComplementaryServicesPage() {
             {images.map((image, index) => (
               <div key={index} className="relative rounded-3xl group w-full lg:w-1/3 aspect-[4/3] overflow-hidden">
                 {/* Imagen */}
-                <img
+                <Image
                   src={image.image}
                   alt={image.alt}
+                  fill
                   className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
                 />
                 
@@ -71,6 +93,33 @@ export default function ComplementaryServicesPage() {
           </div>
         </div>
       
+      </div>
+
+      <div className="relative w-full min-h-[30rem] flex items-center justify-center overflow-hidden mt-8 p-4 md:p-8">
+        <Image
+          src="/assets/servicios/background-slider.svg"
+          alt="Background"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 z-0 grayscale"
+        />
+
+        <div className="max-w-6xl mx-auto w-full relative z-20">
+        <div className="flex flex-col lg:flex-row gap-4">
+            {imagesSlider.map((image, index) => (
+              <div key={index} className="relative rounded-3xl group w-full overflow-hidden">
+                {/* Imagen */}
+                <Image
+                  src={image.image}
+                  alt="Instalacion"
+                  width={400}
+                  height={400}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </>
   )

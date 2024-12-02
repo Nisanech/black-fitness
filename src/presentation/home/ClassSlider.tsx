@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 const classes = [
   {
@@ -93,6 +94,10 @@ export default function ClassSlider() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [visibleCards, setVisibleCards] = useState(1);
 
+  const router = useRouter();
+
+ 
+
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth >= 1024) {
@@ -121,6 +126,10 @@ export default function ClassSlider() {
     );
   };
 
+  const handleRedirect = () => {
+    router.push("/class-schedules");
+  };
+
   return (
     <div className="bg-black-principal text-[#f3f3f3] p-4 lg:px-12 lg:py-8">
       <div className="mb-8 flex flex-col md:flex-row md:items-center md:justify-between">
@@ -135,6 +144,7 @@ export default function ClassSlider() {
         <button
           type="button"
           className="py-3 px-6 text-[24px] font-normal font-deutschlander text-[#f3f3f3] bg-black-principal rounded-full border border-[#f3f3f3] focus:ring-4 focus:ring-[#F3F3F3] w-full md:w-[250px] lg:w-[300px]"
+          onClick={handleRedirect}
         >
           Todas nuestras clases
         </button>

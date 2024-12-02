@@ -143,7 +143,8 @@ export default function Header() {
                 Quienes somos
               </Link>
 
-              <div className="w-[32px] h-[32px]">
+              <div className="w-[32px] h-[32px] cursor-pointer">
+                <Link href="https://www.facebook.com/blackfitnessbogota/?locale=es_LA" target="_blank" >
                 <svg
                   fill="#ffffff"
                   height="32px"
@@ -169,15 +170,18 @@ export default function Header() {
                     </g>{" "}
                   </g>
                 </svg>
+                </Link>
               </div>
 
-              <div className="w-[32px] h-[32px]">
+              <div className="w-[32px] h-[32px] cursor-pointer">
+                <Link href="https://www.instagram.com/blackfitnessbogota/?hl=es" target="_blank" >
                 <Image
                   src="/assets/logo-instagram.svg"
                   alt="User icon"
                   width={32}
                   height={32}
                 />
+                </Link>
               </div>
             </nav>
           </div>
@@ -266,6 +270,7 @@ export default function Header() {
 
               <div className="flex gap-5 mt-5">
               <div className="w-[32px] h-[32px] cursor-pointer">
+                <Link href="https://www.facebook.com/blackfitnessbogota/?locale=es_LA" target="_blank">
                 <svg
                   fill="#ffffff"
                   height="32px"
@@ -291,15 +296,18 @@ export default function Header() {
                     </g>{" "}
                   </g>
                 </svg>
+                </Link>
               </div>
 
               <div className="w-[32px] h-[32px] cursor-pointer">
+                <Link href="https://www.instagram.com/blackfitnessbogota/?hl=es" target="_blank">
                 <Image
                   src="/assets/logo-instagram.svg"
                   alt="User icon"
                   width={32}
                   height={32}
                 />
+                </Link>
               </div>
 
               </div>
