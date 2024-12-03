@@ -23,22 +23,22 @@ const images = [
 
 const imagesSlider = [
   {
-    image: "/assets/servicios/instalacion-1.png"
+    image: "/assets/ambientes/ambiente-1.jpg"
   },
   {
-    image: "/assets/servicios/instalacion-2.png"
+    image: "/assets/ambientes/ambiente-2.jpg"
   },
   {
-    image: "/assets/servicios/instalacion-3.png"
+    image: "/assets/ambientes/ambiente-3.jpg"
   },
   {
-    image: "/assets/servicios/instalacion-4.png"
+    image: "/assets/ambientes/ambiente-4.jpg"
   },
   {
-    image: "/assets/servicios/instalacion-5.png"
+    image: "/assets/ambientes/ambiente-5.jpg"
   },
   {
-    image: "/assets/servicios/instalacion-6.png"
+    image: "/assets/ambientes/ambiente-6.jpg"
   },
 ];
 
@@ -104,10 +104,10 @@ export default function ComplementaryServicesPage() {
           className="absolute inset-0 z-0 grayscale"
         />
 
-        <div className="max-w-6xl mx-auto w-full relative z-20">
-        <div className="flex flex-col lg:flex-row gap-4">
+        <div className="mx-auto w-full relative z-20">
+          <div className="flex flex-col lg:flex-row gap-4">
             {imagesSlider.map((image, index) => (
-              <div key={index} className="relative rounded-3xl group w-full overflow-hidden">
+              <div key={index} className="relative rounded-3xl group w-full lg:w-1/3 aspect-[4/3] overflow-hidden">
                 {/* Imagen */}
                 <Image
                   src={image.image}
